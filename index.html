@@ -36,7 +36,6 @@
   <main>
 
     <section id="inicio" class="inicio">
-
       <div class="inicio-texto">
         <p class="rotulo">Portfólio</p>
         <h1>Stefany Campos</h1>
@@ -54,11 +53,9 @@
       <div class="inicio-foto">
         <img src="img/foto.jpg" alt="Foto de Stefany Campos">
       </div>
-
     </section>
 
     <section id="sobre" class="sobre">
-
       <div class="sobre-titulo">
         <p class="rotulo">01 — Sobre</p>
         <h2>Quem sou eu</h2>
@@ -89,11 +86,9 @@
           Baixar currículo (PDF)
         </a>
       </div>
-
     </section>
 
     <section id="projetos" class="projetos">
-
       <div class="secao-titulo">
         <p class="rotulo">02 — Projetos</p>
         <h2>Projetos selecionados</h2>
@@ -158,10 +153,46 @@
           </div>
         </article>
       </div>
+    </section>
+
+    <section id="certificados" class="certificados">
+
+      <div class="secao-titulo">
+        <p class="rotulo">03 — Certificados</p>
+        <h2>Certificados</h2>
+      </div>
+
+      <div class="trilho-controles">
+        <button type="button" class="trilho-anterior" aria-label="Certificado anterior">←</button>
+        <button type="button" class="trilho-proximo" aria-label="Próximo certificado">→</button>
+      </div>
+
+      <div class="trilho">
+
+        <article class="certificado">
+          <button type="button" class="abrir-certificado">
+            <img src="img/certificado-1.jpg" alt="Certificado do curso Nome do Curso">
+            <h3>Nome do curso</h3>
+            <p>Instituição · Ano</p>
+          </button>
+
+          <div class="certificado-detalhes" hidden>
+            <a href="#" target="_blank" rel="noopener">Verificar certificado</a>
+          </div>
+        </article>
+
+      </div>
 
     </section>
 
   </main>
+
+  <dialog id="modal" class="modal">
+    <button type="button" class="modal-fechar" aria-label="Fechar">×</button>
+    <div class="modal-conteudo">
+
+    </div>
+  </dialog>
 
 </body>
 </html>
