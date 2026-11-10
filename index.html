@@ -24,6 +24,7 @@
     <nav aria-label="Menu principal">
       <ul class="menu">
         <li><a href="#sobre" data-en="About">Sobre</a></li>
+        <li><a href="#habilidades" data-en="Skills">Habilidades</a></li>
         <li><a href="#projetos" data-en="Projects">Projetos</a></li>
         <li><a href="#certificados" data-en="Certificates">Certificados</a></li>
         <li><a href="#contato" data-en="Contact">Contato</a></li>
@@ -72,19 +73,6 @@
           Hoje estudo Python e C, e construí este portfólio do zero com HTML, CSS e JavaScript. Estou em busca do meu primeiro estágio e aberta a oportunidades em diferentes áreas da tecnologia.
         </p>
 
-        <h3 data-en="Technologies">Tecnologias</h3>
-        <ul class="tecnologias">
-          <li>Python</li>
-          <li>C</li>
-          <li>HTML</li>
-          <li>CSS</li>
-          <li>JavaScript</li>
-          <li>React</li>
-          <li>MySQL</li>
-          <li>Git</li>
-          <li>Figma</li>
-        </ul>
-
         <a href="arquivos/curriculo-stefany-campos-pt.pdf"
            class="link-curriculo"
            data-curriculo-en="arquivos/curriculo-stefany-campos-en.pdf"
@@ -95,9 +83,98 @@
       </div>
     </section>
 
+    <section id="habilidades" class="habilidades">
+      <div class="secao-titulo">
+        <p class="rotulo" data-en="02 — What I do">02 — O que eu faço</p>
+        <h2 data-en="Skills">Habilidades</h2>
+      </div>
+
+      <div class="pilares">
+
+        <article class="pilar">
+          <div class="pilar-visual visual-interface" aria-hidden="true">
+            <span class="aa">Aa</span>
+            <svg class="curva" viewBox="0 0 120 80">
+              <path d="M5 72 C 45 72, 60 10, 112 8" fill="none" stroke="#EFE6D8" stroke-width="1.2"/>
+              <rect x="2" y="69" width="6" height="6" fill="none" stroke="#EFE6D8"/>
+              <rect x="109" y="5" width="6" height="6" fill="none" stroke="#EFE6D8"/>
+              <circle cx="62" cy="40" r="3" fill="#C9A96E"/>
+            </svg>
+            <div class="paleta">
+              <span style="background: #6E0F1D"></span>
+              <span style="background: #C9A96E"></span>
+              <span style="background: #EFE6D8"></span>
+              <span style="background: #2B0810"></span>
+            </div>
+            <p class="pilar-legenda">Cormorant Garamond · 600</p>
+          </div>
+          <p class="rotulo" data-en="Pillar 01">Pilar 01</p>
+          <h3>Interface</h3>
+          <p data-en="Responsive and accessible pages, with attention to typography, colors and every detail of the experience.">Páginas responsivas e acessíveis, com atenção a tipografia, cores e cada detalhe da experiência.</p>
+          <ul class="tecnologias">
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>React</li>
+          </ul>
+        </article>
+
+        <article class="pilar">
+          <div class="pilar-visual visual-dados" aria-hidden="true">
+            <svg viewBox="0 0 260 150">
+              <path d="M75 40 L 130 75 L 185 40" fill="none" stroke="#C9A96E" stroke-width="1" stroke-dasharray="3 3"/>
+              <path d="M130 75 L 130 112" fill="none" stroke="#C9A96E" stroke-width="1" stroke-dasharray="3 3"/>
+              <g font-family="JetBrains Mono, monospace" font-size="9" fill="#EFE6D8">
+                <rect x="20" y="22" width="80" height="34" rx="6" fill="#120A0B" stroke="#C9A96E" stroke-opacity="0.35"/>
+                <text x="60" y="43" text-anchor="middle">LIVROS</text>
+                <rect x="160" y="22" width="80" height="34" rx="6" fill="#120A0B" stroke="#C9A96E" stroke-opacity="0.35"/>
+                <text x="200" y="43" text-anchor="middle">USUÁRIOS</text>
+                <rect x="90" y="108" width="80" height="34" rx="6" fill="#120A0B" stroke="#C9A96E" stroke-opacity="0.35"/>
+                <text x="130" y="129" text-anchor="middle">EMPRÉSTIMOS</text>
+              </g>
+              <rect x="117" y="63" width="26" height="24" rx="5" fill="#6E0F1D" stroke="#C9A96E"/>
+              <text x="130" y="79" text-anchor="middle" font-family="JetBrains Mono, monospace" font-size="8" fill="#F5E1A4">1:N</text>
+            </svg>
+            <p class="pilar-legenda">SELECT * FROM livros;</p>
+          </div>
+          <p class="rotulo" data-en="Pillar 02">Pilar 02</p>
+          <h3 data-en="Data">Dados</h3>
+          <p data-en="Modeling and organizing information, from the conceptual diagram to SQL queries.">Modelagem e organização de informações, do diagrama conceitual às consultas em SQL.</p>
+          <ul class="tecnologias">
+            <li>SQL</li>
+            <li>MySQL</li>
+            <li>brModelo</li>
+          </ul>
+        </article>
+
+        <article class="pilar">
+          <div class="pilar-visual visual-codigo" aria-hidden="true">
+            <div class="editor-barra">
+              <span></span><span></span><span></span>
+              <em>script.js</em>
+            </div>
+<pre><code><b>const</b> idioma = <i>'pt'</i>;
+<b>function</b> <u>aplicarIdioma</u>() {
+  botao.<u>setAttribute</u>(
+    <i>'aria-checked'</i>, <b>true</b>
+  );<span class="cursor">▍</span></code></pre>
+          </div>
+          <p class="rotulo" data-en="Pillar 03">Pilar 03</p>
+          <h3 data-en="Code">Código</h3>
+          <p data-en="Logic and interactivity with JavaScript, and the programming foundation I've been building in college.">Lógica e interatividade com JavaScript, e a base de programação que venho construindo na faculdade.</p>
+          <ul class="tecnologias">
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>C</li>
+            <li>Git</li>
+          </ul>
+        </article>
+
+      </div>
+    </section>
+
     <section id="projetos" class="projetos">
       <div class="secao-titulo">
-        <p class="rotulo" data-en="02 — Projects">02 — Projetos</p>
+        <p class="rotulo" data-en="03 — Projects">03 — Projetos</p>
         <h2 data-en="Selected projects">Projetos selecionados</h2>
       </div>
 
@@ -201,7 +278,7 @@
 
     <section id="certificados" class="certificados">
       <div class="secao-titulo">
-        <p class="rotulo" data-en="03 — Certificates">03 — Certificados</p>
+        <p class="rotulo" data-en="04 — Certificates">04 — Certificados</p>
         <h2 data-en="Certificates">Certificados</h2>
       </div>
 
@@ -222,7 +299,7 @@
     </section>
 
     <section id="contato" class="contato">
-      <p class="rotulo" data-en="04 — Contact">04 — Contato</p>
+      <p class="rotulo" data-en="05 — Contact">05 — Contato</p>
       <h2 data-en="Let's talk?">Vamos conversar?</h2>
       <p class="contato-texto" data-en="I'm looking for my first internship. If you have an opportunity, a project or just want to exchange ideas, send me a message.">
         Estou em busca do meu primeiro estágio. Se você tem uma oportunidade, um projeto ou só quer trocar uma ideia, me escreva.

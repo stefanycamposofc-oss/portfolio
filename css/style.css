@@ -821,6 +821,201 @@ body::before {
   pointer-events: none;
 }
 
+/* ========== HABILIDADES ========== */
+.habilidades {
+  position: relative;
+  padding: 7rem max(5%, calc((100% - 1200px) / 2));
+}
+
+.habilidades::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(60%, 640px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: var(--ouro-linha);
+}
+
+.habilidades::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--ouro);
+  box-shadow: 0 0 10px rgba(233, 208, 143, 0.5);
+}
+
+.pilares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.pilar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.5rem;
+  border-radius: 14px;
+  border: 1px solid rgba(201, 169, 110, 0.22);
+  background: linear-gradient(160deg, rgba(110, 15, 29, 0.28), rgba(20, 8, 10, 0.6));
+}
+
+.pilar .rotulo {
+  margin: 0.5rem 0 0;
+}
+
+.pilar h3 {
+  font-size: 1.9rem;
+}
+
+.pilar > p {
+  color: var(--cinza);
+  font-weight: 300;
+}
+
+/* A área das mini-ilustrações */
+.pilar-visual {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  border-radius: 10px;
+  border: 1px solid rgba(201, 169, 110, 0.15);
+  background-color: #0D0909;
+  background-image:
+    linear-gradient(rgba(201, 169, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201, 169, 110, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.pilar-legenda {
+  position: absolute;
+  left: 14px;
+  bottom: 10px;
+  font-family: var(--fonte-detalhe);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8F857B;
+}
+
+/* Card Interface */
+.visual-interface .aa {
+  position: absolute;
+  left: 18px;
+  top: 14px;
+  font-family: var(--fonte-titulo);
+  font-weight: 600;
+  font-size: 6.5rem;
+  line-height: 1;
+  background: var(--ouro);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.visual-interface .curva {
+  position: absolute;
+  right: 14px;
+  top: 22px;
+  width: 44%;
+}
+
+.paleta {
+  position: absolute;
+  right: 14px;
+  bottom: 10px;
+  display: flex;
+  gap: 6px;
+}
+
+.paleta span {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid rgba(239, 230, 216, 0.25);
+}
+
+/* Card Dados */
+.visual-dados svg {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 30px);
+}
+
+/* Card Código */
+.visual-codigo {
+  background-image: none;
+}
+
+.editor-barra {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 12px;
+  border-bottom: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.editor-barra span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #3A2A2A;
+}
+
+.editor-barra span:first-child {
+  background-color: var(--carmim);
+}
+
+.editor-barra em {
+  margin-left: 8px;
+  font-style: normal;
+  font-family: var(--fonte-detalhe);
+  font-size: 0.7rem;
+  color: #8F857B;
+}
+
+.visual-codigo pre {
+  padding: 12px 14px;
+  font-family: var(--fonte-detalhe);
+  font-size: 0.78rem;
+  line-height: 1.7;
+  color: var(--vela);
+}
+
+.visual-codigo b {
+  font-weight: 400;
+  color: #D9B96E;
+}
+
+.visual-codigo i {
+  font-style: normal;
+  color: #C77D8B;
+}
+
+.visual-codigo u {
+  text-decoration: none;
+  color: #F5E1A4;
+}
+
+.cursor {
+  color: #D9B96E;
+  animation: piscar 1s steps(2) infinite;
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0;
+  }
+}
+
 /* ========== CELULAR ========== */
 @media (max-width: 700px) {
 

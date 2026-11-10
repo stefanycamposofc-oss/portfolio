@@ -122,7 +122,7 @@ botaoEmail.addEventListener('click', () => {
 });
 
 // ========== ANIMAÇÃO AO ROLAR ==========
-const secoes = document.querySelectorAll('.sobre, .projetos, .certificados, .contato');
+const secoes = document.querySelectorAll('.sobre, .habilidades, .projetos, .certificados, .contato');
 
 const observador = new IntersectionObserver((entradas) => {
   entradas.forEach((entrada) => {
