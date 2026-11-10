@@ -184,17 +184,42 @@ h4 {
 }
 
 .idioma {
-  font-family: var(--fonte-detalhe);
-  font-size: 0.8rem;
-  color: var(--dourado);
+  position: relative;
+  display: flex;
+  padding: 0.25rem;
   border: 1px solid var(--dourado);
-  border-radius: 4px;
-  padding: 0.5rem 0.875rem;
-  transition: background-color 0.3s, color 0.3s;
+  border-radius: 999px;
+  font-family: var(--fonte-detalhe);
+  font-size: 0.75rem;
 }
 
-.idioma:hover {
+.idioma::before {
+  content: "";
+  position: absolute;
+  top: 0.25rem;
+  left: 0.25rem;
+  width: 2.5rem;
+  height: calc(100% - 0.5rem);
   background-color: var(--dourado);
+  border-radius: 999px;
+  transition: transform 0.3s;
+}
+
+.idioma[aria-checked="true"]::before {
+  transform: translateX(100%);
+}
+
+.idioma-opcao {
+  position: relative;
+  width: 2.5rem;
+  padding: 0.375rem 0;
+  text-align: center;
+  color: var(--dourado);
+  transition: color 0.3s;
+}
+
+.idioma[aria-checked="false"] .idioma-opcao:first-child,
+.idioma[aria-checked="true"] .idioma-opcao:last-child {
   color: var(--noite);
 }
 
