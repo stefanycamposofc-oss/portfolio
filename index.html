@@ -18,41 +18,39 @@
 <body>
     
   <header class="cabecalho">
-    <a href="#inicio" class="logo" aria-label="Voltar ao início">
+    <a href="#inicio" class="logo" aria-label="Voltar ao início" data-en-label="Back to top">
       <img src="img/logo.svg" alt="">
     </a>
 
     <nav aria-label="Menu principal">
       <ul class="menu">
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-        <li><a href="#certificados">Certificados</a></li>
-        <li><a href="#contato">Contato</a></li>
+        <li><a href="#sobre" data-en="About">Sobre</a></li>
+        <li><a href="#projetos" data-en="Projects">Projetos</a></li>
+        <li><a href="#certificados" data-en="Certificates">Certificados</a></li>
+        <li><a href="#contato" data-en="Contact">Contato</a></li>
       </ul>
     </nav>
 
-    <button type="button" class="idioma" role="switch" aria-checked="false" aria-label="Site em inglês">
+    <button type="button" class="idioma" role="switch" aria-checked="false" aria-label="Site em inglês" data-en-label="English site">
       <span class="idioma-opcao">PT</span>
       <span class="idioma-opcao">EN</span>
     </button>
   </header>
 
-
-
   <main>
 
     <section id="inicio" class="inicio">
       <div class="inicio-texto">
-        <p class="rotulo">Portfólio</p>
+        <p class="rotulo" data-en="Portfolio">Portfólio</p>
         <h1>Stefany Campos</h1>
-        <p class="inicio-subtitulo">Estudante de Engenharia de Software</p>
-        <p class="inicio-descricao">
+        <p class="inicio-subtitulo" data-en="Software Engineering Student">Estudante de Engenharia de Software</p>
+        <p class="inicio-descricao" data-en="Your short sentence in English.">
           Escreva aqui uma frase curta sua, com a sua voz.
         </p>
 
         <div class="inicio-botoes">
-          <a href="#projetos" class="botao botao-principal">Ver projetos</a>
-          <a href="#contato" class="botao botao-secundario">Entrar em contato</a>
+          <a href="#projetos" class="botao botao-principal" data-en="View projects">Ver projetos</a>
+          <a href="#contato" class="botao botao-secundario" data-en="Get in touch">Entrar em contato</a>
         </div>
       </div>
 
@@ -63,19 +61,19 @@
 
     <section id="sobre" class="sobre">
       <div class="sobre-titulo">
-        <p class="rotulo">01 — Sobre</p>
-        <h2>Quem sou eu</h2>
+        <p class="rotulo" data-en="01 — About">01 — Sobre</p>
+        <h2 data-en="About me">Quem sou eu</h2>
       </div>
 
       <div class="sobre-conteudo">
-        <p>
+        <p data-en="Your first paragraph in English.">
           Primeiro parágrafo: quem você é e o que estuda.
         </p>
-        <p>
+        <p data-en="Your second paragraph in English.">
           Segundo parágrafo: o que você gosta de criar e o que está aprendendo agora.
         </p>
 
-        <h3>Tecnologias</h3>
+        <h3 data-en="Technologies">Tecnologias</h3>
         <ul class="tecnologias">
           <li>Python</li>
           <li>C</li>
@@ -91,6 +89,7 @@
         <a href="arquivos/curriculo-stefany-campos-pt.pdf"
            class="link-curriculo"
            data-curriculo-en="arquivos/curriculo-stefany-campos-en.pdf"
+           data-en="Download résumé (PDF)"
            download>
           Baixar currículo (PDF)
         </a>
@@ -99,17 +98,18 @@
 
     <section id="projetos" class="projetos">
       <div class="secao-titulo">
-        <p class="rotulo">02 — Projetos</p>
-        <h2>Projetos selecionados</h2>
+        <p class="rotulo" data-en="02 — Projects">02 — Projetos</p>
+        <h2 data-en="Selected projects">Projetos selecionados</h2>
       </div>
 
+      <!-- Projeto em destaque -->
       <article class="projeto projeto-destaque">
         <img src="img/projeto-1.jpg" alt="Tela inicial do projeto Nome do Projeto">
 
         <div class="projeto-info">
-          <p class="rotulo">Destaque</p>
-          <h3>Nome do projeto</h3>
-          <p>Descrição curta do projeto, em uma ou duas linhas.</p>
+          <p class="rotulo" data-en="Featured">Destaque</p>
+          <h3 data-en="Project name">Nome do projeto</h3>
+          <p data-en="Short project description.">Descrição curta do projeto, em uma ou duas linhas.</p>
 
           <ul class="tecnologias">
             <li>HTML</li>
@@ -118,83 +118,14 @@
           </ul>
 
           <div class="projeto-links">
-            <button type="button" class="abrir-detalhes">Ver detalhes</button>
-            <a href="#" target="_blank" rel="noopener">Ver site</a>
-            <a href="#" target="_blank" rel="noopener">Código no GitHub</a>
-          </div>
-        </div>
-
-        <div class="projeto-detalhes" hidden>
-          <h4>O problema</h4>
-          <p>Qual necessidade ou ideia deu origem ao projeto.</p>
-          <h4>O que eu fiz</h4>
-          <p>Sua parte no projeto e como você resolveu.</p>
-          <h4>O que aprendi</h4>
-          <p>Um aprendizado técnico ou de trabalho em equipe.</p>
-        </div>
-      </article>
-
-      <!-- Outros projetos -->
-      <div class="projetos-lista">
-        <article class="projeto">
-          <img src="img/projeto-2.jpg" alt="Tela do projeto Nome do Projeto">
-
-          <div class="projeto-info">
-            <h3>Nome do projeto</h3>
-            <p>Descrição curta.</p>
-
-            <ul class="tecnologias">
-              <li>Figma</li>
-            </ul>
-
-            <div class="projeto-links">
-              <button type="button" class="abrir-detalhes">Ver detalhes</button>
-            </div>
-          </div>
-
-          <div class="projeto-detalhes" hidden>
-            <h4>O problema</h4>
-            <p>...</p>
-            <h4>O que eu fiz</h4>
-            <p>...</p>
-            <h4>O que aprendi</h4>
-            <p>...</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="certificados" class="certificados">
-      <div class="secao-titulo">
-        <p class="rotulo">03 — Certificados</p>
-        <h2>Certificados</h2>
-      </div>
-
-      <div class="trilho-controles">
-        <button type="button" class="trilho-anterior" aria-label="Certificado anterior">←</button>
-        <button type="button" class="trilho-proximo" aria-label="Próximo certificado">→</button>
-      </div>
-
-      <div class="trilho">
-
-        <article class="certificado">
-          <button type="button" class="abrir-certificado">
-            <img src="img/certificado-1.jpg" alt="Certificado do curso Nome do Curso">
-            <h3>Curso Lógica de Programação</h3>
-            <p>Escola do Futuro de Goiás-EFG · 2026</p>
-          </button>
-
-
-        </article>
-
-      </div>
-    </section>
+            <button type="button" class="abrir-detalhes" data-en="View details">Ver detalhes</button>
+            <a href="#" target="_blank" rel="noopener" data-en="View
 
     <section id="contato" class="contato">
 
-      <p class="rotulo">04 — Contato</p>
-      <h2>Vamos conversar?</h2>
-      <p class="contato-texto">
+      <p class="rotulo" data-en="04 — Contact">04 — Contato</p>
+      <h2 data-en="Let's talk?">Vamos conversar?</h2>
+      <p class="contato-texto" data-en="Your invitation sentence in English.">
         Escreva aqui uma frase sua convidando para o contato.
       </p>
 
@@ -204,7 +135,7 @@
       <p class="aviso-copiado" aria-live="polite"></p>
 
       <ul class="contato-links">
-        <li><a href="mailto:stefany.camposofc@gmail.com">Enviar e-mail</a></li>
+        <li><a href="mailto:stefany.camposofc@gmail.com" data-en="Send email">Enviar e-mail</a></li>
         <li><a href="https://www.linkedin.com/in/stefany--campos/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://github.com/stefanycamposofc-oss" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
@@ -215,11 +146,11 @@
 
   <footer class="rodape">
     <p>© 2026 Stefany Campos</p>
-    <a href="#inicio" class="voltar-topo">Voltar ao topo ↑</a>
+<a href="#inicio" class="voltar-topo" data-en="Back to top ↑">Voltar ao topo ↑</a>
   </footer>
 
   <dialog id="modal" class="modal">
-    <button type="button" class="modal-fechar" aria-label="Fechar">×</button>
+<button type="button" class="modal-fechar" aria-label="Fechar" data-en-label="Close">×</button>
     <div class="modal-conteudo">
 
     </div>

@@ -77,6 +77,7 @@ modal.addEventListener('click', (evento) => {
 const trilho = document.querySelector('.trilho');
 const setaAnterior = document.querySelector('.trilho-anterior');
 const setaProxima = document.querySelector('.trilho-proximo');
+const controlesTrilho = document.querySelector('.trilho-controles');
 
 function moverTrilho(direcao) {
   const card = trilho.querySelector('.certificado');
@@ -89,6 +90,15 @@ function moverTrilho(direcao) {
 setaAnterior.addEventListener('click', () => moverTrilho(-1));
 setaProxima.addEventListener('click', () => moverTrilho(1));
 
+// Esconde as setas se todos os certificados couberem na tela
+function atualizarSetas() {
+  const temMaisParaRolar = trilho.scrollWidth > trilho.clientWidth;
+  controlesTrilho.hidden = !temMaisParaRolar;
+}
+
+atualizarSetas();
+window.addEventListener('resize', atualizarSetas);
+
 // ========== COPIAR E-MAIL ==========
 const botaoEmail = document.querySelector('.copiar-email');
 const avisoCopiado = document.querySelector('.aviso-copiado');
@@ -98,10 +108,12 @@ botaoEmail.addEventListener('click', () => {
 
   navigator.clipboard.writeText(email)
     .then(() => {
-      avisoCopiado.textContent = 'E-mail copiado!';
+      avisoCopiado.textContent = idiomaAtual === 'en' ? 'Email copied!' : 'E-mail copiado!';
     })
     .catch(() => {
-      avisoCopiado.textContent = 'Não foi possível copiar. Use o link "Enviar e-mail".';
+      avisoCopiado.textContent = idiomaAtual === 'en'
+        ? 'Could not copy. Use the "Send email" link.'
+        : 'Não foi possível copiar. Use o link "Enviar e-mail".';
     });
 
   setTimeout(() => {
@@ -126,13 +138,60 @@ secoes.forEach((secao) => {
   observador.observe(secao);
 });
 
-// Esconde as setas se todos os certificados couberem na tela
-const controlesTrilho = document.querySelector('.trilho-controles');
+// ========== IDIOMA PT/EN ==========
+const botaoIdioma = document.querySelector('.idioma');
+const textosTraduziveis = document.querySelectorAll('[data-en]');
+const rotulosTraduziveis = document.querySelectorAll('[data-en-label]');
+const linkCurriculo = document.querySelector('.link-curriculo');
 
-function atualizarSetas() {
-  const temMaisParaRolar = trilho.scrollWidth > trilho.clientWidth;
-  controlesTrilho.hidden = !temMaisParaRolar;
+let idiomaAtual = 'pt';
+
+// Guarda os textos originais em português
+textosTraduziveis.forEach((elemento) => {
+  elemento.dataset.pt = elemento.textContent.trim();
+});
+
+rotulosTraduziveis.forEach((elemento) => {
+  elemento.dataset.ptLabel = elemento.getAttribute('aria-label');
+});
+
+linkCurriculo.dataset.curriculoPt = linkCurriculo.getAttribute('href');
+
+function aplicarIdioma(idioma) {
+  const ingles = idioma === 'en';
+
+  textosTraduziveis.forEach((elemento) => {
+    elemento.textContent = ingles ? elemento.dataset.en : elemento.dataset.pt;
+  });
+
+  rotulosTraduziveis.forEach((elemento) => {
+    const rotulo = ingles ? elemento.dataset.enLabel : elemento.dataset.ptLabel;
+    elemento.setAttribute('aria-label', rotulo);
+  });
+
+  linkCurriculo.href = ingles
+    ? linkCurriculo.dataset.curriculoEn
+    : linkCurriculo.dataset.curriculoPt;
+
+  document.documentElement.lang = ingles ? 'en' : 'pt-BR';
+  botaoIdioma.setAttribute('aria-checked', String(ingles));
+  idiomaAtual = idioma;
+
+  try {
+    localStorage.setItem('idioma', idioma);
+  } catch (erro) {
+    // Se o navegador bloquear, o site funciona normalmente, só não lembra a escolha
+  }
 }
 
-atualizarSetas();
-window.addEventListener('resize', atualizarSetas);
+botaoIdioma.addEventListener('click', () => {
+  aplicarIdioma(idiomaAtual === 'pt' ? 'en' : 'pt');
+});
+
+// Ao abrir o site, usa o idioma escolhido da última vez
+let idiomaSalvo = 'pt';
+try {
+  idiomaSalvo = localStorage.getItem('idioma') || 'pt';
+} catch (erro) {}
+
+aplicarIdioma(idiomaSalvo);
