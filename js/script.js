@@ -208,7 +208,11 @@ if (temMouse && !menosMovimento) {
 
   const pincel = canvas.getContext('2d');
   const pontos = [];
-  const duracao = 450;
+  const duracao = 600;
+  const suavidade = 0.18;
+
+  const mouse = { x: 0, y: 0 };
+  const ponta = { x: 0, y: 0 };
   let animando = false;
 
   function ajustarTamanho() {
@@ -224,18 +228,37 @@ if (temMouse && !menosMovimento) {
   function desenhar() {
     const agora = performance.now();
 
+    // A ponta do fio persegue o mouse aos poucos
+    ponta.x += (mouse.x - ponta.x) * suavidade;
+    ponta.y += (mouse.y - ponta.y) * suavidade;
+
+    // Só guarda um ponto novo se a ponta se mexeu
+    const ultimo = pontos[pontos.length - 1];
+    if (!ultimo || Math.abs(ponta.x - ultimo.x) + Math.abs(ponta.y - ultimo.y) > 0.5) {
+      pontos.push({ x: ponta.x, y: ponta.y, tempo: agora });
+    }
+
+    // Tira os pontos velhos
     while (pontos.length && agora - pontos[0].tempo > duracao) {
       pontos.shift();
     }
 
     pincel.clearRect(0, 0, window.innerWidth, window.innerHeight);
     pincel.lineCap = 'round';
+    pincel.lineJoin = 'round';
 
-    for (let i = 1; i < pontos.length; i++) {
-      const anterior = pontos[i - 1];
-      const atual = pontos[i];
-      const vida = 1 - (agora - atual.tempo) / duracao;
+    // Desenha curvas suaves entre os pontos
+    for (let i = 2; i < pontos.length; i++) {
+      const p0 = pontos[i - 2];
+      const p1 = pontos[i - 1];
+      const p2 = pontos[i];
 
+      const inicioX = (p0.x + p1.x) / 2;
+      const inicioY = (p0.y + p1.y) / 2;
+      const fimX = (p1.x + p2.x) / 2;
+      const fimY = (p1.y + p2.y) / 2;
+
+      const vida = 1 - (agora - p2.tempo) / duracao;
       const r = Math.round(138 + (245 - 138) * vida);
       const g = Math.round(106 + (225 - 106) * vida);
       const b = Math.round(47 + (164 - 47) * vida);
@@ -246,22 +269,27 @@ if (temMouse && !menosMovimento) {
       pincel.shadowBlur = 8 * vida;
 
       pincel.beginPath();
-      pincel.moveTo(anterior.x, anterior.y);
-      pincel.lineTo(atual.x, atual.y);
+      pincel.moveTo(inicioX, inicioY);
+      pincel.quadraticCurveTo(p1.x, p1.y, fimX, fimY);
       pincel.stroke();
     }
 
-    if (pontos.length) {
+    // Continua enquanto ainda tem rastro na tela
+    if (pontos.length > 0) {
       requestAnimationFrame(desenhar);
     } else {
+      pincel.clearRect(0, 0, window.innerWidth, window.innerHeight);
       animando = false;
     }
   }
 
   document.addEventListener('mousemove', (evento) => {
-    pontos.push({ x: evento.clientX, y: evento.clientY, tempo: performance.now() });
+    mouse.x = evento.clientX;
+    mouse.y = evento.clientY;
 
     if (!animando) {
+      ponta.x = mouse.x;
+      ponta.y = mouse.y;
       animando = true;
       requestAnimationFrame(desenhar);
     }

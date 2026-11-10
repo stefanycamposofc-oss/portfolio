@@ -811,10 +811,12 @@ body::before {
   }
 }
 
-/* Fio de ouro do cursor */
 .fio-de-ouro {
   position: fixed;
-  inset: 0;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: 100;
   pointer-events: none;
 }
