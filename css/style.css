@@ -867,3 +867,14 @@ body {
   }
 }
 
+/* ========== ANIMAÇÃO AO ROLAR ========== */
+.revelar {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.revelar.visivel {
+  opacity: 1;
+  transform: none;
+}

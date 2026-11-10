@@ -62,3 +62,55 @@ modal.addEventListener('click', (evento) => {
   }
 });
 
+// ========== SETAS DOS CERTIFICADOS ==========
+const trilho = document.querySelector('.trilho');
+const setaAnterior = document.querySelector('.trilho-anterior');
+const setaProxima = document.querySelector('.trilho-proximo');
+
+function moverTrilho(direcao) {
+  const card = trilho.querySelector('.certificado');
+  if (!card) return;
+
+  const passo = card.offsetWidth + 24;
+  trilho.scrollBy({ left: passo * direcao, behavior: 'smooth' });
+}
+
+setaAnterior.addEventListener('click', () => moverTrilho(-1));
+setaProxima.addEventListener('click', () => moverTrilho(1));
+
+// ========== COPIAR E-MAIL ==========
+const botaoEmail = document.querySelector('.copiar-email');
+const avisoCopiado = document.querySelector('.aviso-copiado');
+
+botaoEmail.addEventListener('click', () => {
+  const email = botaoEmail.dataset.email;
+
+  navigator.clipboard.writeText(email)
+    .then(() => {
+      avisoCopiado.textContent = 'E-mail copiado!';
+    })
+    .catch(() => {
+      avisoCopiado.textContent = 'Não foi possível copiar. Use o link "Enviar e-mail".';
+    });
+
+  setTimeout(() => {
+    avisoCopiado.textContent = '';
+  }, 3000);
+});
+
+// ========== ANIMAÇÃO AO ROLAR ==========
+const secoes = document.querySelectorAll('.sobre, .projetos, .certificados, .contato');
+
+const observador = new IntersectionObserver((entradas) => {
+  entradas.forEach((entrada) => {
+    if (entrada.isIntersecting) {
+      entrada.target.classList.add('visivel');
+      observador.unobserve(entrada.target);
+    }
+  });
+}, { threshold: 0.15 });
+
+secoes.forEach((secao) => {
+  secao.classList.add('revelar');
+  observador.observe(secao);
+});
