@@ -253,3 +253,175 @@ h4 {
   border: 1px solid rgba(199, 165, 107, 0.4);
   background-color: var(--oxblood);
 }
+
+/* ========== SEÇÕES ========== */
+.sobre,
+.projetos,
+.certificados,
+.contato {
+  padding: 7rem max(5%, calc((100% - 1200px) / 2));
+}
+
+/* ========== SOBRE ========== */
+.sobre {
+  background-color: var(--sangue);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+}
+
+.sobre-titulo {
+  flex: 1 1 250px;
+}
+
+.sobre-conteudo {
+  flex: 999 1 500px;
+}
+
+.sobre-conteudo p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sobre-conteudo p + p {
+  color: var(--cinza);
+  font-weight: 300;
+}
+
+.sobre-conteudo h3 {
+  font-size: 1.5rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Tecnologias (usado em Sobre e em Projetos) */
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tecnologias li {
+  font-family: var(--fonte-detalhe);
+  font-size: 0.8rem;
+  color: var(--dourado);
+  border: 1px solid rgba(199, 165, 107, 0.5);
+  border-radius: 4px;
+  padding: 0.375rem 0.75rem;
+}
+
+.link-curriculo {
+  display: inline-block;
+  margin-top: 2.5rem;
+  color: var(--dourado);
+  border-bottom: 1px solid var(--dourado);
+  padding-bottom: 0.25rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.link-curriculo:hover {
+  color: var(--vela);
+  border-color: var(--vela);
+}
+
+/* ========== TÍTULO DAS SEÇÕES ========== */
+.secao-titulo {
+  margin-bottom: 3rem;
+}
+
+/* ========== PROJETOS ========== */
+.projeto {
+  background-color: var(--oxblood);
+  border: 1px solid rgba(199, 165, 107, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+}
+
+.projeto:hover {
+  transform: translateY(-4px);
+  border-color: var(--dourado);
+}
+
+.projeto img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  background-color: var(--sangue);
+}
+
+.projeto-info {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.projeto-info p {
+  color: var(--cinza);
+  font-weight: 300;
+}
+
+.projeto-destaque {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.projeto-destaque img {
+  flex: 999 1 480px;
+  width: auto;
+  min-height: 320px;
+  aspect-ratio: auto;
+}
+
+.projeto-destaque .projeto-info {
+  flex: 1 1 320px;
+  padding: 2.5rem;
+  justify-content: center;
+}
+
+.projeto-destaque h3 {
+  font-size: 2.25rem;
+}
+
+.projetos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.projeto-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+.abrir-detalhes {
+  font-size: 0.9rem;
+  color: var(--dourado);
+  border: 1px solid var(--dourado);
+  border-radius: 6px;
+  padding: 0.625rem 1.25rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.abrir-detalhes:hover {
+  background-color: var(--dourado);
+  color: var(--noite);
+}
+
+.projeto-links a {
+  font-size: 0.9rem;
+  border-bottom: 1px solid rgba(241, 227, 207, 0.4);
+  padding-bottom: 0.125rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.projeto-links a:hover {
+  color: var(--dourado);
+  border-color: var(--dourado);
+}
+
