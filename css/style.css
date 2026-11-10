@@ -773,6 +773,19 @@ body {
   color: #E2C485;
 }
 
+/* Etiqueta de status dos projetos */
+.status {
+  align-self: flex-start;
+  font-family: var(--fonte-detalhe);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #E2C485;
+  border: 1px solid rgba(201, 169, 110, 0.4);
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+}
+
 /* ========== CELULAR ========== */
 @media (max-width: 700px) {
 
