@@ -169,7 +169,7 @@ h4 {
 }
 
 .logo img {
-  height: 2.5rem;
+  height: 3.5rem;
   width: auto;
 }
 
@@ -279,6 +279,7 @@ h4 {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center top;
   border-radius: 200px 200px 12px 12px;
   border: 1px solid rgba(199, 165, 107, 0.4);
   background-color: var(--oxblood);
@@ -514,8 +515,9 @@ h4 {
 
 .abrir-certificado img {
   width: 100%;
-  aspect-ratio: 297 / 210;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+  object-position: center top;
   background-color: var(--vela);
 }
 
@@ -566,9 +568,11 @@ h4 {
 }
 
 .modal-conteudo img {
-  width: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 65vh;
+  margin: 0 auto 1.5rem;
   border-radius: 8px;
-  margin-bottom: 1.5rem;
 }
 
 .modal-conteudo h3 {
