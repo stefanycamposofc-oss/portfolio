@@ -114,3 +114,14 @@ secoes.forEach((secao) => {
   secao.classList.add('revelar');
   observador.observe(secao);
 });
+
+// Esconde as setas se todos os certificados couberem na tela
+const controlesTrilho = document.querySelector('.trilho-controles');
+
+function atualizarSetas() {
+  const temMaisParaRolar = trilho.scrollWidth > trilho.clientWidth;
+  controlesTrilho.hidden = !temMaisParaRolar;
+}
+
+atualizarSetas();
+window.addEventListener('resize', atualizarSetas);
