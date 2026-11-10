@@ -786,6 +786,39 @@ body {
   padding: 0.25rem 0.75rem;
 }
 
+/* Luz bordô flutuando no fundo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -20%;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 30% 30%, rgba(110, 15, 29, 0.28), transparent 40%),
+    radial-gradient(circle at 70% 65%, rgba(201, 169, 110, 0.06), transparent 35%);
+  animation: luz-flutuando 40s ease-in-out infinite alternate;
+}
+
+@keyframes luz-flutuando {
+  0% {
+    transform: translate(-6%, -4%) scale(1);
+  }
+  50% {
+    transform: translate(5%, 6%) scale(1.1);
+  }
+  100% {
+    transform: translate(-3%, 5%) scale(1.05);
+  }
+}
+
+/* Fio de ouro do cursor */
+.fio-de-ouro {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  pointer-events: none;
+}
+
 /* ========== CELULAR ========== */
 @media (max-width: 700px) {
 
@@ -877,6 +910,12 @@ body {
   *::before,
   *::after {
     transition: none !important;
+      *,
+  *::before,
+  *::after {
+    transition: none !important;
+    animation: none !important;
+  }
   }
 }
 

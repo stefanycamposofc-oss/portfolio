@@ -196,3 +196,74 @@ try {
 } catch (erro) {}
 
 aplicarIdioma(idiomaSalvo);
+
+// ========== FIO DE OURO DO CURSOR ==========
+const temMouse = window.matchMedia('(pointer: fine)').matches;
+const menosMovimento = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (temMouse && !menosMovimento) {
+  const canvas = document.createElement('canvas');
+  canvas.className = 'fio-de-ouro';
+  document.body.appendChild(canvas);
+
+  const pincel = canvas.getContext('2d');
+  const pontos = [];
+  const duracao = 450;
+  let animando = false;
+
+  function ajustarTamanho() {
+    const escala = window.devicePixelRatio || 1;
+    canvas.width = window.innerWidth * escala;
+    canvas.height = window.innerHeight * escala;
+    pincel.setTransform(escala, 0, 0, escala, 0, 0);
+  }
+
+  ajustarTamanho();
+  window.addEventListener('resize', ajustarTamanho);
+
+  function desenhar() {
+    const agora = performance.now();
+
+    while (pontos.length && agora - pontos[0].tempo > duracao) {
+      pontos.shift();
+    }
+
+    pincel.clearRect(0, 0, window.innerWidth, window.innerHeight);
+    pincel.lineCap = 'round';
+
+    for (let i = 1; i < pontos.length; i++) {
+      const anterior = pontos[i - 1];
+      const atual = pontos[i];
+      const vida = 1 - (agora - atual.tempo) / duracao;
+
+      const r = Math.round(138 + (245 - 138) * vida);
+      const g = Math.round(106 + (225 - 106) * vida);
+      const b = Math.round(47 + (164 - 47) * vida);
+
+      pincel.strokeStyle = `rgba(${r}, ${g}, ${b}, ${vida})`;
+      pincel.lineWidth = 2.5 * vida;
+      pincel.shadowColor = 'rgba(233, 208, 143, 0.6)';
+      pincel.shadowBlur = 8 * vida;
+
+      pincel.beginPath();
+      pincel.moveTo(anterior.x, anterior.y);
+      pincel.lineTo(atual.x, atual.y);
+      pincel.stroke();
+    }
+
+    if (pontos.length) {
+      requestAnimationFrame(desenhar);
+    } else {
+      animando = false;
+    }
+  }
+
+  document.addEventListener('mousemove', (evento) => {
+    pontos.push({ x: evento.clientX, y: evento.clientY, tempo: performance.now() });
+
+    if (!animando) {
+      animando = true;
+      requestAnimationFrame(desenhar);
+    }
+  });
+}
