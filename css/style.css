@@ -425,3 +425,135 @@ h4 {
   border-color: var(--dourado);
 }
 
+/* ========== CERTIFICADOS ========== */
+.certificados {
+  background-color: var(--sangue);
+}
+
+.trilho-controles {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.trilho-controles button {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 1px solid var(--dourado);
+  color: var(--dourado);
+  font-size: 1.1rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.trilho-controles button:hover {
+  background-color: var(--dourado);
+  color: var(--noite);
+}
+
+.trilho {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--dourado) transparent;
+}
+
+.certificado {
+  flex: 0 0 min(320px, 85%);
+  scroll-snap-align: start;
+}
+
+.abrir-certificado {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background-color: var(--oxblood);
+  border: 1px solid rgba(199, 165, 107, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.abrir-certificado:hover {
+  border-color: var(--dourado);
+}
+
+.abrir-certificado img {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background-color: var(--vela);
+}
+
+.abrir-certificado h3 {
+  font-size: 1.375rem;
+  padding: 1.25rem 1.25rem 0.25rem;
+}
+
+.abrir-certificado p {
+  font-size: 0.85rem;
+  color: var(--cinza);
+  padding: 0 1.25rem 1.25rem;
+}
+
+/* ========== MODAL ========== */
+.modal {
+  margin: auto;
+  width: min(720px, 90vw);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 3rem 2.5rem 2.5rem;
+  background-color: var(--oxblood);
+  color: var(--vela);
+  border: 1px solid var(--dourado);
+  border-radius: 12px;
+}
+
+.modal::backdrop {
+  background-color: rgba(20, 15, 23, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.modal-fechar {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  font-size: 1.75rem;
+  line-height: 1;
+  color: var(--dourado);
+  border-radius: 50%;
+  transition: background-color 0.3s;
+}
+
+.modal-fechar:hover {
+  background-color: rgba(199, 165, 107, 0.15);
+}
+
+.modal-conteudo img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.modal-conteudo h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.modal-conteudo h4 {
+  color: var(--dourado);
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.modal-conteudo p {
+  color: var(--cinza);
+  font-weight: 300;
+}
+
