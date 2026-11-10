@@ -1,3 +1,14 @@
+// ========== SEMPRE COMEÇAR DO TOPO ==========
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+if (location.hash) {
+  history.replaceState(null, '', location.pathname);
+}
+
+window.scrollTo(0, 0);
+
 // ========== MODAL ==========
 const modal = document.querySelector('#modal');
 const modalConteudo = modal.querySelector('.modal-conteudo');

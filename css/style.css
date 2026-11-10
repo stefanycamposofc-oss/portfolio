@@ -532,17 +532,6 @@ h4 {
   padding: 0 1.25rem 1.25rem;
 }
 
-// ========== SEMPRE COMEÇAR DO TOPO ==========
-if ('scrollRestoration' in history) {
-  history.scrollRestoration = 'manual';
-}
-
-if (location.hash) {
-  history.replaceState(null, '', location.pathname);
-}
-
-window.scrollTo(0, 0);
-
 /* ========== MODAL ========== */
 .modal {
   margin: auto;
