@@ -1,0 +1,114 @@
+/* ========== VARIÁVEIS ========== */
+:root {
+  /* Cores: fundos */
+  --noite: #140F17;
+  --sangue: #210207;
+
+  /* Cores: vinhos */
+  --oxblood: #481415;
+  --carmim: #730C1E;
+  --vinho: #b30b0b;
+
+  /* Cores: acentos */
+  --dourado: #C7A56B;
+  --vela: #F1E3CF;
+  --cinza: #C4C1B8;
+
+  /* Fontes */
+  --fonte-titulo: 'Cormorant Garamond', serif;
+  --fonte-corpo: 'Inter', sans-serif;
+  --fonte-detalhe: 'JetBrains Mono', monospace;
+}
+
+/* ========== RESET ========== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ========== BASE ========== */
+body {
+  background-color: var(--noite);
+  color: var(--vela);
+  font-family: var(--fonte-corpo);
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--fonte-titulo);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+::selection {
+  background-color: var(--carmim);
+  color: var(--vela);
+}
+
+:focus-visible {
+  outline: 2px solid var(--dourado);
+  outline-offset: 4px;
+}
+
+/* ========== COMPONENTES ========== */
+.rotulo {
+  font-family: var(--fonte-detalhe);
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--dourado);
+  margin-bottom: 1rem;
+}
