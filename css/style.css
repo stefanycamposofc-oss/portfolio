@@ -7,7 +7,7 @@
   /* Cores: vinhos */
   --oxblood: #481415;
   --carmim: #730C1E;
-  --vinho: #b30b0b;
+  --vinho: #5C0F1C;
 
   /* Cores: acentos */
   --dourado: #C7A56B;
@@ -166,6 +166,11 @@ h4 {
   font-size: 1.75rem;
   font-weight: 600;
   color: var(--dourado);
+}
+
+.logo img {
+  height: 2.5rem;
+  width: auto;
 }
 
 .menu {
@@ -509,7 +514,7 @@ h4 {
 
 .abrir-certificado img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 297 / 210;
   object-fit: cover;
   background-color: var(--vela);
 }
@@ -669,9 +674,6 @@ h4 {
   color: var(--vela);
 }
 
-@media (max-width: 700px) {
-  /* regras aqui só valem em telas de até 700px */
-}
 /* ========== CELULAR ========== */
 @media (max-width: 700px) {
 
