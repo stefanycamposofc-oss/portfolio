@@ -1,18 +1,22 @@
 /* ========== VARIÁVEIS ========== */
 :root {
   /* Cores: fundos */
-  --noite: #0A0A0A;
-  --sangue: #210207;
+  --noite: #0B0909;
+  --sangue: #2B0810;
 
   /* Cores: vinhos */
-  --oxblood: #481415;
-  --carmim: #730C1E;
+  --oxblood: #3A0C16;
+  --carmim: #6E0F1D;
   --vinho: #5C0F1C;
 
   /* Cores: acentos */
-  --dourado: #C7A56B;
-  --vela: #F1E3CF;
-  --cinza: #C4C1B8;
+  --dourado: #C9A96E;
+  --vela: #EFE6D8;
+  --cinza: #B5ABA0;
+
+  /* Ouro metálico */
+  --ouro: linear-gradient(135deg, #8A6A2F 0%, #E9D08F 22%, #B8924A 45%, #F5E1A4 65%, #A07A36 85%, #D9B96E 100%);
+  --ouro-linha: linear-gradient(90deg, transparent, #8A6A2F 20%, #F5E1A4 50%, #8A6A2F 80%, transparent);
 
   /* Fontes */
   --fonte-titulo: 'Cormorant Garamond', serif;
@@ -156,7 +160,7 @@ h4 {
   justify-content: space-between;
   gap: 1rem;
   padding: 1.25rem 5%;
-  background-color: rgba(20, 15, 23, 0.85);
+  background-color: rgba(11, 9, 9, 0.7);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(199, 165, 107, 0.2);
 }
@@ -295,7 +299,6 @@ h4 {
 
 /* ========== SOBRE ========== */
 .sobre {
-  background-color: var(--sangue);
   display: flex;
   flex-wrap: wrap;
   gap: 4rem;
@@ -457,9 +460,6 @@ h4 {
 }
 
 /* ========== CERTIFICADOS ========== */
-.certificados {
-  background-color: var(--sangue);
-}
 
 .trilho-controles {
   display: flex;
@@ -546,7 +546,7 @@ h4 {
 }
 
 .modal::backdrop {
-  background-color: rgba(20, 15, 23, 0.85);
+  background-color: rgba(11, 9, 9, 0.85);
   backdrop-filter: blur(4px);
 }
 
@@ -676,6 +676,101 @@ h4 {
 
 .voltar-topo:hover {
   color: var(--vela);
+}
+
+/* ========== DETALHES DE LUXO ========== */
+
+/* Fundo contínuo com luz bordô */
+body {
+  background:
+    radial-gradient(ellipse 60% 35% at 0% 8%, rgba(110, 15, 29, 0.45), transparent 70%),
+    radial-gradient(ellipse 50% 30% at 100% 35%, rgba(110, 15, 29, 0.30), transparent 70%),
+    radial-gradient(ellipse 55% 30% at 0% 68%, rgba(110, 15, 29, 0.30), transparent 70%),
+    radial-gradient(ellipse 60% 25% at 50% 100%, rgba(110, 15, 29, 0.40), transparent 70%),
+    var(--noite);
+}
+
+/* Divisórias douradas entre as seções */
+.sobre,
+.projetos,
+.certificados,
+.contato {
+  position: relative;
+}
+
+.sobre::before,
+.projetos::before,
+.certificados::before,
+.contato::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: min(60%, 640px);
+  height: 1px;
+  transform: translateX(-50%);
+  background: var(--ouro-linha);
+}
+
+.sobre::after,
+.projetos::after,
+.certificados::after,
+.contato::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 50%;
+  width: 8px;
+  height: 8px;
+  transform: translateX(-50%) rotate(45deg);
+  background: var(--ouro);
+  box-shadow: 0 0 10px rgba(233, 208, 143, 0.5);
+}
+
+/* Cards com degradê */
+.projeto,
+.abrir-certificado {
+  background: linear-gradient(160deg, rgba(110, 15, 29, 0.35), rgba(20, 8, 10, 0.6));
+  border-color: rgba(201, 169, 110, 0.25);
+}
+
+/* Textos em ouro metálico */
+.rotulo,
+.inicio-subtitulo,
+.voltar-topo {
+  background: var(--ouro);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Bordas em ouro metálico */
+.botao-secundario,
+.abrir-detalhes,
+.tecnologias li,
+.trilho-controles button,
+.idioma {
+  border: 1px solid transparent;
+  background:
+    linear-gradient(var(--noite), var(--noite)) padding-box,
+    var(--ouro) border-box;
+  color: #E2C485;
+}
+
+.botao-secundario:hover,
+.abrir-detalhes:hover,
+.trilho-controles button:hover {
+  background: var(--ouro);
+  color: var(--noite);
+}
+
+.idioma::before {
+  background: var(--ouro);
+}
+
+.link-curriculo {
+  border-image: var(--ouro-linha) 1;
+  color: #E2C485;
 }
 
 /* ========== CELULAR ========== */
