@@ -43,8 +43,8 @@
         <p class="rotulo" data-en="Portfolio">Portfólio</p>
         <h1>Stefany Campos</h1>
         <p class="inicio-subtitulo" data-en="Software Engineering Student">Estudante de Engenharia de Software</p>
-        <p class="inicio-descricao" data-en="Your short sentence in English.">
-          Escreva aqui uma frase curta sua, com a sua voz.
+        <p class="inicio-descricao" data-en="I like to understand the problem before writing the first line of code, from user research to the database.">
+          Gosto de entender o problema antes de escrever a primeira linha de código, da pesquisa com usuários ao banco de dados.
         </p>
 
         <div class="inicio-botoes">
@@ -65,11 +65,11 @@
       </div>
 
       <div class="sobre-conteudo">
-        <p data-en="Your first paragraph in English.">
-          Primeiro parágrafo: quem você é e o que estuda.
+        <p data-en="I'm a Software Engineering student at Centro Universitário UDF. In college, I've worked on projects that go from user interviews and interface prototypes to data modeling and code.">
+          Sou estudante de Engenharia de Software no Centro Universitário UDF. Na faculdade, venho trabalhando em projetos que vão da entrevista com usuários e do protótipo de interface até a modelagem de dados e o código.
         </p>
-        <p data-en="Your second paragraph in English.">
-          Segundo parágrafo: o que você gosta de criar e o que está aprendendo agora.
+        <p data-en="I'm currently studying Python and C, and I built this portfolio from scratch with HTML, CSS and JavaScript. I'm looking for my first internship and I'm open to opportunities in different areas of technology.">
+          Hoje estudo Python e C, e construí este portfólio do zero com HTML, CSS e JavaScript. Estou em busca do meu primeiro estágio e aberta a oportunidades em diferentes áreas da tecnologia.
         </p>
 
         <h3 data-en="Technologies">Tecnologias</h3>
@@ -103,47 +103,82 @@
 
       <!-- Projeto em destaque -->
       <article class="projeto projeto-destaque">
-        <img src="img/projeto-1.jpg" alt="Tela inicial do projeto Nome do Projeto">
+        <img src="img/projeto-1.jpg" alt="Tela do Baú de Almas, com a busca e os cards dos personagens">
 
         <div class="projeto-info">
           <p class="rotulo" data-en="Featured">Destaque</p>
-          <h3 data-en="Project name">Nome do projeto</h3>
-          <p data-en="Short project description.">Descrição curta do projeto, em uma ou duas linhas.</p>
+          <span class="status" data-en="In development">Em desenvolvimento</span>
+          <h3>Baú de Almas</h3>
+          <p data-en="Website to store and organize my characters, from free stories to RPG characters with full sheets.">Site para guardar e organizar meus personagens, das histórias livres aos de RPG com ficha completa.</p>
 
           <ul class="tecnologias">
-            <li>HTML</li>
-            <li>CSS</li>
+            <li>React</li>
+            <li>Vite</li>
             <li>JavaScript</li>
           </ul>
 
           <div class="projeto-links">
             <button type="button" class="abrir-detalhes" data-en="View details">Ver detalhes</button>
-            <a href="#" target="_blank" rel="noopener" data-en="View site">Ver site</a>
-            <a href="#" target="_blank" rel="noopener" data-en="Code on GitHub">Código no GitHub</a>
+            <a href="https://github.com/stefanycamposofc-oss/bau-de-almas" target="_blank" rel="noopener" data-en="Code on GitHub">Código no GitHub</a>
           </div>
         </div>
 
         <div class="projeto-detalhes" hidden>
-          <h4 data-en="The problem">O problema</h4>
-          <p data-en="What need or idea gave rise to the project.">Qual necessidade ou ideia deu origem ao projeto.</p>
-          <h4 data-en="What I did">O que eu fiz</h4>
-          <p data-en="My part in the project and how I solved it.">Sua parte no projeto e como você resolveu.</p>
-          <h4 data-en="What I learned">O que aprendi</h4>
-          <p data-en="A technical or teamwork lesson.">Um aprendizado técnico ou de trabalho em equipe.</p>
+          <h4 data-en="The idea">A ideia</h4>
+          <p data-en="I create many characters, for stories and for RPG tables like D&D and Ordem Paranormal, and I wanted a single place to keep all of them organized.">Eu crio muitos personagens, para histórias e para mesas de RPG como D&amp;D e Ordem Paranormal, e queria um lugar só para guardar todos eles organizados.</p>
+          <h4 data-en="What is ready">O que já está pronto</h4>
+          <p data-en="The character gallery with search by name and filters by type and RPG system, built with React components and state.">A galeria de personagens com busca por nome e filtros por tipo e sistema de RPG, feita com componentes e estado no React.</p>
+          <h4 data-en="Next steps">Próximos passos</h4>
+          <p data-en="A page for each character divided into chapters, RPG sheets for different systems, and login with cloud storage.">Uma página para cada personagem dividida em capítulos, fichas de RPG de vários sistemas e login com armazenamento na nuvem.</p>
         </div>
       </article>
 
       <!-- Outros projetos -->
       <div class="projetos-lista">
+
         <article class="projeto">
-          <img src="img/projeto-2.jpg" alt="Tela do projeto Nome do Projeto">
+          <img src="img/projeto-2.jpg" alt="Página inicial deste portfólio, com fundo escuro, detalhes em dourado e a foto de Stefany">
 
           <div class="projeto-info">
-            <h3 data-en="Project name">Nome do projeto</h3>
-            <p data-en="Short description.">Descrição curta.</p>
+            <h3 data-en="This portfolio">Este portfólio</h3>
+            <p data-en="Personal website built from scratch, without frameworks, with PT/EN translation and a responsive layout.">Site pessoal construído do zero, sem frameworks, com tradução PT/EN e layout responsivo.</p>
 
             <ul class="tecnologias">
-              <li>Figma</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li>Git</li>
+            </ul>
+
+            <div class="projeto-links">
+              <button type="button" class="abrir-detalhes" data-en="View details">Ver detalhes</button>
+              <a href="https://github.com/stefanycamposofc-oss/portfolio" target="_blank" rel="noopener" data-en="Code on GitHub">Código no GitHub</a>
+            </div>
+          </div>
+
+          <div class="projeto-detalhes" hidden>
+            <h4 data-en="The problem">O problema</h4>
+            <p data-en="I wanted a portfolio that looked like me and that I could explain line by line, instead of a ready-made template.">Eu queria um portfólio com a minha cara e que eu conseguisse explicar linha por linha, em vez de usar um modelo pronto.</p>
+            <h4 data-en="What I did">O que eu fiz</h4>
+            <p data-en="I wrote all the code: semantic HTML, CSS with Flexbox, Grid and media queries, and JavaScript for the modal, the translation, the animations and the copy email button.">Escrevi todo o código: HTML semântico, CSS com Flexbox, Grid e media queries, e JavaScript para o modal, a tradução, as animações e o botão de copiar e-mail.</p>
+            <h4 data-en="What I learned">O que aprendi</h4>
+            <p data-en="To organize a project with Git from the start and to think about accessibility in every detail, from keyboard navigation to screen readers.">A organizar um projeto com Git desde o início e a pensar em acessibilidade em cada detalhe, da navegação por teclado aos leitores de tela.</p>
+          </div>
+        </article>
+
+        <article class="projeto">
+          <img src="img/projeto-3.jpg" alt="Tela do Ukiyo, com um ambiente real para estudar e relaxar">
+
+          <div class="projeto-info">
+            <span class="status" data-en="In development">Em desenvolvimento</span>
+            <h3>Ukiyo</h3>
+            <p data-en="Website to study and relax in real places, like a train or a café, with real weather and time.">Site para estudar e relaxar em lugares reais, como um trem ou um café, com o clima e a hora de verdade.</p>
+
+            <ul class="tecnologias">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+              <li data-en="Weather API">API de clima</li>
             </ul>
 
             <div class="projeto-links">
@@ -152,14 +187,15 @@
           </div>
 
           <div class="projeto-detalhes" hidden>
-            <h4 data-en="The problem">O problema</h4>
-            <p>...</p>
-            <h4 data-en="What I did">O que eu fiz</h4>
-            <p>...</p>
-            <h4 data-en="What I learned">O que aprendi</h4>
-            <p>...</p>
+            <h4 data-en="The idea">A ideia</h4>
+            <p data-en="To create a calm space that helps you stay focused while studying and relax during breaks.">Criar um espaço tranquilo que ajude a manter o foco nos estudos e a relaxar nas pausas.</p>
+            <h4 data-en="How it works">Como funciona</h4>
+            <p data-en="Real videos of places as the scenery, with an illustrated cat for company. The weather can follow the real time and weather of the place or be chosen by you.">Vídeos reais de lugares como cenário, com um gatinho ilustrado fazendo companhia. O clima pode seguir a hora e o tempo reais do lugar ou ser escolhido por você.</p>
+            <h4 data-en="Next steps">Próximos passos</h4>
+            <p data-en="Connect the weather API, finish the environments and publish the site.">Conectar a API de clima, finalizar os ambientes e publicar o site.</p>
           </div>
         </article>
+
       </div>
     </section>
 
@@ -188,8 +224,8 @@
     <section id="contato" class="contato">
       <p class="rotulo" data-en="04 — Contact">04 — Contato</p>
       <h2 data-en="Let's talk?">Vamos conversar?</h2>
-      <p class="contato-texto" data-en="Your invitation sentence in English.">
-        Escreva aqui uma frase sua convidando para o contato.
+      <p class="contato-texto" data-en="I'm looking for my first internship. If you have an opportunity, a project or just want to exchange ideas, send me a message.">
+        Estou em busca do meu primeiro estágio. Se você tem uma oportunidade, um projeto ou só quer trocar uma ideia, me escreva.
       </p>
 
       <button type="button" class="copiar-email" data-email="stefany.camposofc@gmail.com">
