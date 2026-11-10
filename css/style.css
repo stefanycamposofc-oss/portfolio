@@ -532,6 +532,17 @@ h4 {
   padding: 0 1.25rem 1.25rem;
 }
 
+// ========== SEMPRE COMEÇAR DO TOPO ==========
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
+
+if (location.hash) {
+  history.replaceState(null, '', location.pathname);
+}
+
+window.scrollTo(0, 0);
+
 /* ========== MODAL ========== */
 .modal {
   margin: auto;
@@ -870,8 +881,8 @@ body {
 /* ========== ANIMAÇÃO AO ROLAR ========== */
 .revelar {
   opacity: 0;
-  transform: translateY(2rem);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(3rem);
+  transition: opacity 1.4s ease, transform 1.4s ease;
 }
 
 .revelar.visivel {
