@@ -1,12 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Stefany Campos, estudante de Engenharia de Software. Projetos, certificados e contato.">
-    <title>Stefany Campos | Portfólio</title>
-    <link rel="icon" href="img/logo.svg" type="image/svg+xml">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfólio de Stefany Campos, estudante de Engenharia de Software. Projetos, certificados e contato.">
+  <title>Stefany Campos | Portfólio</title>
+  <link rel="icon" href="img/logo.svg" type="image/svg+xml">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,7 +15,7 @@
   <script src="js/script.js" defer></script>
 </head>
 <body>
-    
+
   <header class="cabecalho">
     <a href="#inicio" class="logo" aria-label="Voltar ao início" data-en-label="Back to top">
       <img src="img/logo.svg" alt="">
@@ -119,10 +118,74 @@
 
           <div class="projeto-links">
             <button type="button" class="abrir-detalhes" data-en="View details">Ver detalhes</button>
-            <a href="#" target="_blank" rel="noopener" data-en="View
+            <a href="#" target="_blank" rel="noopener" data-en="View site">Ver site</a>
+            <a href="#" target="_blank" rel="noopener" data-en="Code on GitHub">Código no GitHub</a>
+          </div>
+        </div>
+
+        <div class="projeto-detalhes" hidden>
+          <h4 data-en="The problem">O problema</h4>
+          <p data-en="What need or idea gave rise to the project.">Qual necessidade ou ideia deu origem ao projeto.</p>
+          <h4 data-en="What I did">O que eu fiz</h4>
+          <p data-en="My part in the project and how I solved it.">Sua parte no projeto e como você resolveu.</p>
+          <h4 data-en="What I learned">O que aprendi</h4>
+          <p data-en="A technical or teamwork lesson.">Um aprendizado técnico ou de trabalho em equipe.</p>
+        </div>
+      </article>
+
+      <!-- Outros projetos -->
+      <div class="projetos-lista">
+        <article class="projeto">
+          <img src="img/projeto-2.jpg" alt="Tela do projeto Nome do Projeto">
+
+          <div class="projeto-info">
+            <h3 data-en="Project name">Nome do projeto</h3>
+            <p data-en="Short description.">Descrição curta.</p>
+
+            <ul class="tecnologias">
+              <li>Figma</li>
+            </ul>
+
+            <div class="projeto-links">
+              <button type="button" class="abrir-detalhes" data-en="View details">Ver detalhes</button>
+            </div>
+          </div>
+
+          <div class="projeto-detalhes" hidden>
+            <h4 data-en="The problem">O problema</h4>
+            <p>...</p>
+            <h4 data-en="What I did">O que eu fiz</h4>
+            <p>...</p>
+            <h4 data-en="What I learned">O que aprendi</h4>
+            <p>...</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="certificados" class="certificados">
+      <div class="secao-titulo">
+        <p class="rotulo" data-en="03 — Certificates">03 — Certificados</p>
+        <h2 data-en="Certificates">Certificados</h2>
+      </div>
+
+      <div class="trilho-controles">
+        <button type="button" class="trilho-anterior" aria-label="Certificado anterior" data-en-label="Previous certificate">←</button>
+        <button type="button" class="trilho-proximo" aria-label="Próximo certificado" data-en-label="Next certificate">→</button>
+      </div>
+
+      <div class="trilho">
+        <article class="certificado">
+          <button type="button" class="abrir-certificado">
+            <img src="img/certificado-1.jpg" alt="Certificado de capacitação em Lógica de Programação, emitido pela Escola do Futuro do Estado de Goiás">
+            <h3 data-en="Programming Logic Course">Curso Lógica de Programação</h3>
+            <p>Escola do Futuro de Goiás-EFG · 2026</p>
+          </button>
+        </article>
+      </div>
+    </section>
 
     <section id="contato" class="contato">
-
       <p class="rotulo" data-en="04 — Contact">04 — Contato</p>
       <h2 data-en="Let's talk?">Vamos conversar?</h2>
       <p class="contato-texto" data-en="Your invitation sentence in English.">
@@ -139,18 +202,17 @@
         <li><a href="https://www.linkedin.com/in/stefany--campos/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="https://github.com/stefanycamposofc-oss" target="_blank" rel="noopener">GitHub</a></li>
       </ul>
-
     </section>
 
   </main>
 
   <footer class="rodape">
     <p>© 2026 Stefany Campos</p>
-<a href="#inicio" class="voltar-topo" data-en="Back to top ↑">Voltar ao topo ↑</a>
+    <a href="#inicio" class="voltar-topo" data-en="Back to top ↑">Voltar ao topo ↑</a>
   </footer>
 
   <dialog id="modal" class="modal">
-<button type="button" class="modal-fechar" aria-label="Fechar" data-en-label="Close">×</button>
+    <button type="button" class="modal-fechar" aria-label="Fechar" data-en-label="Close">×</button>
     <div class="modal-conteudo">
 
     </div>
