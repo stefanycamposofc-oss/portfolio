@@ -557,3 +557,187 @@ h4 {
   font-weight: 300;
 }
 
+/* ========== CONTATO ========== */
+.contato {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contato h2 {
+  font-size: clamp(2.75rem, 7vw, 4.5rem);
+  margin-bottom: 1.25rem;
+}
+
+.contato-texto {
+  max-width: 32rem;
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--cinza);
+  margin-bottom: 2.5rem;
+}
+
+.copiar-email {
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
+  font-weight: 500;
+  background-color: var(--carmim);
+  color: var(--vela);
+  padding: 1rem 2rem;
+  border-radius: 6px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.copiar-email:hover {
+  background-color: var(--vinho);
+  transform: translateY(-2px);
+}
+
+.aviso-copiado {
+  min-height: 1.5rem;
+  margin-top: 0.75rem;
+  font-family: var(--fonte-detalhe);
+  font-size: 0.8rem;
+  color: var(--dourado);
+}
+
+.contato-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+.contato-links a {
+  border-bottom: 1px solid rgba(241, 227, 207, 0.4);
+  padding-bottom: 0.25rem;
+  transition: color 0.3s, border-color 0.3s;
+}
+
+.contato-links a:hover {
+  color: var(--dourado);
+  border-color: var(--dourado);
+}
+
+/* ========== RODAPÉ ========== */
+.rodape {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem max(5%, calc((100% - 1200px) / 2));
+  border-top: 1px solid rgba(199, 165, 107, 0.2);
+  font-size: 0.85rem;
+  color: var(--cinza);
+}
+
+.voltar-topo {
+  font-family: var(--fonte-detalhe);
+  font-size: 0.8rem;
+  color: var(--dourado);
+  transition: color 0.3s;
+}
+
+.voltar-topo:hover {
+  color: var(--vela);
+}
+
+@media (max-width: 700px) {
+  /* regras aqui só valem em telas de até 700px */
+}
+/* ========== CELULAR ========== */
+@media (max-width: 700px) {
+
+  html {
+    scroll-padding-top: 7.5rem;
+  }
+
+  /* Menu: os links descem para uma segunda linha */
+  .cabecalho {
+    flex-wrap: wrap;
+    padding: 1rem 5%;
+  }
+
+  .cabecalho nav {
+    order: 3;
+    width: 100%;
+  }
+
+  .menu {
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+
+  .menu a {
+    font-size: 0.875rem;
+  }
+
+  /* Seções com menos espaço */
+  .sobre,
+  .projetos,
+  .certificados,
+  .contato {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .sobre {
+    gap: 2rem;
+  }
+
+  /* Início */
+  .inicio {
+    min-height: auto;
+    padding-top: 3rem;
+    gap: 3rem;
+  }
+
+  .inicio-foto {
+    max-width: 280px;
+  }
+
+  /* Projetos */
+  .projeto-destaque img {
+    min-height: 220px;
+  }
+
+  .projeto-destaque .projeto-info {
+    padding: 1.5rem;
+  }
+
+  .projeto-destaque h3 {
+    font-size: 1.75rem;
+  }
+
+  /* Modal */
+  .modal {
+    padding: 3rem 1.5rem 1.5rem;
+  }
+
+  /* Rodapé */
+  .rodape {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (hover: none) {
+  .trilho-controles {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition: none !important;
+  }
+}
+
