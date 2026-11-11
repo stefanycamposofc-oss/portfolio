@@ -99,28 +99,6 @@ function atualizarSetas() {
 atualizarSetas();
 window.addEventListener('resize', atualizarSetas);
 
-// ========== COPIAR E-MAIL ==========
-const botaoEmail = document.querySelector('.copiar-email');
-const avisoCopiado = document.querySelector('.aviso-copiado');
-
-botaoEmail.addEventListener('click', () => {
-  const email = botaoEmail.dataset.email;
-
-  navigator.clipboard.writeText(email)
-    .then(() => {
-      avisoCopiado.textContent = idiomaAtual === 'en' ? 'Email copied!' : 'E-mail copiado!';
-    })
-    .catch(() => {
-      avisoCopiado.textContent = idiomaAtual === 'en'
-        ? 'Could not copy. Use the "Send email" link.'
-        : 'Não foi possível copiar. Use o link "Enviar e-mail".';
-    });
-
-  setTimeout(() => {
-    avisoCopiado.textContent = '';
-  }, 3000);
-});
-
 // ========== ANIMAÇÃO AO ROLAR ==========
 const secoes = document.querySelectorAll('.sobre, .habilidades, .projetos, .certificados, .contato');
 
