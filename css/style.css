@@ -1230,6 +1230,87 @@ body::before {
   }
 }
 
+/* ========== FUNDO VINHO E BRILHOS ========== */
+
+/* O fundo que muda com a rolagem (desenhado pelo JS) */
+.fundo-vinho {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Moldura dourada atrás da foto */
+.inicio-foto {
+  position: relative;
+  isolation: isolate;
+}
+
+.inicio-foto::before,
+.inicio-foto::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: 200px 200px 12px 12px;
+  transform: translate(14px, 14px);
+  pointer-events: none;
+}
+
+.inicio-foto::before {
+  border: 1px solid rgba(201, 169, 110, 0.45);
+}
+
+/* Ponto de luz que percorre a moldura */
+@property --angulo {
+  syntax: "<angle>";
+  inherits: false;
+  initial-value: 0deg;
+}
+
+.inicio-foto::after {
+  inset: -1px;
+  padding: 1.5px;
+  background: conic-gradient(from var(--angulo), transparent 0 78%, rgba(245, 225, 164, 0.15) 84%, #F5E1A4 90%, rgba(245, 225, 164, 0.15) 95%, transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  animation: girar-reflexo 8s linear infinite;
+}
+
+@keyframes girar-reflexo {
+  to {
+    --angulo: 360deg;
+  }
+}
+
+/* Reflexo de luz que passa pelo nome */
+.nome-brilho {
+  background:
+    linear-gradient(110deg, transparent 35%, rgba(255, 246, 220, 0.95) 50%, transparent 65%) no-repeat,
+    var(--ouro);
+  background-size: 40% 100%, 100% 100%;
+  background-position: -60% 0, 0 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: reflexo-nome 7s ease-in-out infinite;
+}
+
+@keyframes reflexo-nome {
+  0%,
+  60% {
+    background-position: -60% 0, 0 0;
+  }
+  85%,
+  100% {
+    background-position: 160% 0, 0 0;
+  }
+}
+
 /* ========== CELULAR ========== */
 @media (max-width: 700px) {
 

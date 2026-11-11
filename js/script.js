@@ -299,3 +299,112 @@ if (temMouse && !menosMovimento) {
     }
   });
 }
+
+
+// ========== FUNDO VINHO QUE MUDA COM A ROLAGEM ==========
+{
+  const fundo = document.createElement('canvas');
+  fundo.className = 'fundo-vinho';
+  fundo.setAttribute('aria-hidden', 'true');
+  document.body.prepend(fundo);
+
+  const tinta = fundo.getContext('2d');
+
+  // As "paradas" da luz: onde ela fica e que cor tem em cada parte da página
+  const paradas = [
+    { x: 0.85, y: 0.15, raio: 0.75, cor: [58, 12, 22], forca: 0.9 },
+    { x: 0.15, y: 0.5, raio: 0.8, cor: [110, 15, 29], forca: 0.55 },
+    { x: 0.7, y: 0.75, raio: 0.7, cor: [92, 15, 28], forca: 0.7 },
+    { x: 0.5, y: 0.95, raio: 1.1, cor: [43, 8, 16], forca: 1 }
+  ];
+
+  let largura, altura;
+  let alvo = 0;
+  let atual = 0;
+  let desenhando = false;
+
+  const misturar = (a, b, t) => a + (b - a) * t;
+  const suavizar = (t) => t * t * (3 - 2 * t);
+
+  function ajustarTamanho() {
+    const escala = Math.min(window.devicePixelRatio || 1, 2);
+    largura = window.innerWidth;
+    altura = window.innerHeight;
+    fundo.width = largura * escala;
+    fundo.height = altura * escala;
+    tinta.setTransform(escala, 0, 0, escala, 0, 0);
+  }
+
+  // Quanto da página já foi rolado, de 0 (topo) a 1 (fim)
+  function progressoDaRolagem() {
+    const maximo = document.documentElement.scrollHeight - window.innerHeight;
+    return maximo > 0 ? Math.min(Math.max(window.scrollY / maximo, 0), 1) : 0;
+  }
+
+  function pintar(p) {
+    tinta.fillStyle = '#0B0909';
+    tinta.fillRect(0, 0, largura, altura);
+
+    // Descobre entre quais paradas estamos e o quanto andou entre elas
+    const trechos = paradas.length - 1;
+    const posicao = p * trechos;
+    const i = Math.min(Math.floor(posicao), trechos - 1);
+    const t = suavizar(posicao - i);
+    const de = paradas[i];
+    const para = paradas[i + 1];
+
+    const x = misturar(de.x, para.x, t) * largura;
+    const y = misturar(de.y, para.y, t) * altura;
+    const raio = misturar(de.raio, para.raio, t) * Math.max(largura, altura);
+    const cor = de.cor.map((valor, k) => Math.round(misturar(valor, para.cor[k], t)));
+    const forca = misturar(de.forca, para.forca, t);
+
+    let luz = tinta.createRadialGradient(x, y, 0, x, y, raio);
+    luz.addColorStop(0, `rgba(${cor}, ${forca})`);
+    luz.addColorStop(1, 'rgba(11, 9, 9, 0)');
+    tinta.fillStyle = luz;
+    tinta.fillRect(0, 0, largura, altura);
+
+    // Uma segunda luz, mais fraca, do lado oposto
+    const x2 = largura - x * 0.6;
+    const y2 = altura - y * 0.5;
+    luz = tinta.createRadialGradient(x2, y2, 0, x2, y2, raio * 0.6);
+    luz.addColorStop(0, `rgba(43, 8, 16, ${0.35 + p * 0.4})`);
+    luz.addColorStop(1, 'rgba(11, 9, 9, 0)');
+    tinta.fillStyle = luz;
+    tinta.fillRect(0, 0, largura, altura);
+  }
+
+  // A cor anda aos poucos até a posição da rolagem
+  function quadro() {
+    atual += (alvo - atual) * (menosMovimento ? 1 : 0.08);
+    if (Math.abs(alvo - atual) < 0.0005) atual = alvo;
+
+    pintar(atual);
+
+    if (atual !== alvo) {
+      requestAnimationFrame(quadro);
+    } else {
+      desenhando = false;
+    }
+  }
+
+  function atualizarFundo() {
+    alvo = progressoDaRolagem();
+    if (!desenhando) {
+      desenhando = true;
+      requestAnimationFrame(quadro);
+    }
+  }
+
+  window.addEventListener('scroll', atualizarFundo, { passive: true });
+  window.addEventListener('resize', () => {
+    ajustarTamanho();
+    pintar(atual);
+    atualizarFundo();
+  });
+
+  ajustarTamanho();
+  atual = alvo = progressoDaRolagem();
+  pintar(atual);
+}
