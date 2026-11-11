@@ -1277,6 +1277,7 @@ body::before {
   background: conic-gradient(from var(--angulo), transparent 0 78%, rgba(245, 225, 164, 0.15) 84%, #F5E1A4 90%, rgba(245, 225, 164, 0.15) 95%, transparent 100%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor;
+  mask-composite: exclude;
   mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
   animation: girar-reflexo 8s linear infinite;
 }
