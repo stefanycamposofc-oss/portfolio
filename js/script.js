@@ -173,6 +173,10 @@ function aplicarIdioma(idioma) {
   linkCurriculo.href = ingles
     ? linkCurriculo.dataset.curriculoEn
     : linkCurriculo.dataset.curriculoPt;
+    
+  linkCurriculo.download = ingles
+    ? 'Resume-Stefany-Campos.pdf'
+    : 'Curriculo-Stefany-Campos.pdf';
 
   document.documentElement.lang = ingles ? 'en' : 'pt-BR';
   botaoIdioma.setAttribute('aria-checked', String(ingles));
