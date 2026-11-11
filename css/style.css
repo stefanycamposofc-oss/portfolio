@@ -1162,6 +1162,74 @@ body::before {
   }
 }
 
+/* ========== CONTATO EM DUAS COLUNAS ========== */
+.contato-grade {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+  text-align: left;
+}
+
+.contato-principal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contato-grade h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+.contato-grade .contato-links {
+  justify-content: flex-start;
+}
+
+/* A palavra em contorno dourado */
+.contorno {
+  font-style: italic;
+  font-weight: 500;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #D9B96E;
+}
+
+/* O card de informações */
+.contato-info {
+  padding: 2rem;
+  border-radius: 14px;
+  border: 1px solid rgba(201, 169, 110, 0.25);
+  background: linear-gradient(160deg, rgba(110, 15, 29, 0.3), rgba(20, 8, 10, 0.6));
+}
+
+.contato-info dl > div {
+  padding: 1rem 0;
+  border-top: 1px solid rgba(201, 169, 110, 0.15);
+}
+
+.contato-info dl > div:first-child {
+  border-top: none;
+}
+
+.contato-info dt {
+  margin-bottom: 0.25rem;
+  font-family: var(--fonte-detalhe);
+  font-size: 0.68rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #8F857B;
+}
+
+.contato-info dd {
+  color: var(--vela);
+}
+
+/* Em telas menores, o card desce para baixo */
+@media (max-width: 800px) {
+  .contato-grade {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ========== CELULAR ========== */
 @media (max-width: 700px) {
 
